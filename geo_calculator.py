@@ -4,7 +4,7 @@ from skyfield.api import load, wgs84, EarthSatellite
 from datetime import datetime, timezone
 
 def fetch_tle(norad_id):
-    url = f"https://celestrak.org/NORAD/elements/gp.php?CATNR={norad_id}"
+    url = f"https://celestrak.org/NORAD/elements/gp.php?CATNR={norad_id}&FORMAT=TLE"
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
